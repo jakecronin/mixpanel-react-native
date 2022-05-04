@@ -45,12 +45,12 @@ open class MixpanelReactNative: NSObject {
     }
 
     @objc
-    func setLoggingEnabled(_ token: String,
-                    loggingEnabled: Bool,
+    func setFlushOnBackground(_ token: String,
+                    flushOnBackground: Bool,
                     resolver resolve: RCTPromiseResolveBlock,
                     rejecter reject: RCTPromiseRejectBlock) -> Void {
         let instance = MixpanelReactNative.getMixpanelInstance(token)
-        instance?.loggingEnabled = loggingEnabled
+        instance?.flushOnBackground = flushOnBackground
         resolve(nil)
     }
 
