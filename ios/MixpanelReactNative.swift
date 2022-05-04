@@ -45,6 +45,16 @@ open class MixpanelReactNative: NSObject {
     }
 
     @objc
+    func setLoggingEnabled(_ token: String,
+                    loggingEnabled: Bool,
+                    resolver resolve: RCTPromiseResolveBlock,
+                    rejecter reject: RCTPromiseRejectBlock) -> Void {
+        let instance = MixpanelReactNative.getMixpanelInstance(token)
+        instance?.loggingEnabled = loggingEnabled
+        resolve(nil)
+    }
+
+    @objc
     func setUseIpAddressForGeolocation(_ token: String,
                     useIpAddressForGeolocation: Bool,
                     resolver resolve: RCTPromiseResolveBlock,
